@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wolfpack Water App</title>
+        
+        <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family:Verdana, Geneva, sans-serif;
+}
+
+h2 {
+    font-family:Verdana, Geneva, sans-serif;
+}
+
+p {
+    font-family:Verdana, Geneva, sans-serif;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+.subbody {
+    visibility: hidden;
+}
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    border: 1px solid #888;
+    width: 50%; 
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+        </style>
+    </head>
+    
+    <body>
+        <div id="container">
+            <div id="header" style="background-color: blue; visibility: visible; align: top;">
+                <h1 style="color: white; font-size: 100px"><center>WOLFPACK WATER</center</h1>
+            </div>
+            
+            <div id="body">
+                <div id="loginform" visibility="visible">
+                    <br><br><br><br>
+<div align="right">
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto; font-size: 24px; background-color: blue; text-align: top;">Login</button>
+</div>
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="http://cdn.onlinewebfonts.com/svg/img_568656.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+  <input type="radio" name="user" value="custodian">Custodian<br>
+  <input type="radio" name="user" value="student">Student <i>(Password not required)</i><br>
+   <br><br>
+   
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+     <center> <button type="button" style="width:auto;" onclick="togglehide()">Login</button></center>
+       </div>
+
+    </form>
+</div>
+
+<script>
+
+function togglehide() {
+    var x = document.getElementById("loginform");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+       var y = document.getElementById("bodypart2");
+        y.style.display = "none";
+    if (y.style.display === "block") {
+        y.style.display = "none";
+    } else {
+        y.style.display = "block";
+    }
+}
+</script>
+
+
+                </div>
+                <div id="bodypart2"><center>
+                               <br><br><br><br>
+               
+    <input type="button" onclick="location.href='http://teamdelta.mybluemix.net/ui/#/2';" value="Recommendations" /><br><br>
+    <input type="button" onclick="location.href='http://teamdelta.mybluemix.net/ui/#/1';" value="Water Usage" /><br><br><br>
+    <input type="button" onclick="location.href='http://teamdelta.mybluemix.net/ui/#/0';" value="Submit Problem" />
+</form>
+           
+            </div> 
+            </div>
+            <div id="footer">
+                
+            </div>
+        </div>
+    </body>
+</html>
